@@ -1,14 +1,24 @@
-To install, connect to your VM and run:
-Pass the service name & gateway endpionts arguments
-`curl -o- https://github/team-hypha/hypha-agent/install.sh service1 192.167.1.1:3478 | bash`
+# Hypha Agent
 
-creates hypha-agent
-downloads `dowload_collector_agent.sh`
-downloads `start_collector_agent.sh`
-downloads `otel-config.yaml`
-runs download
-runs start
+The Hypha agent is an OTel collector deployed as an agent & configured to read log files and receive traces.
 
-That will download and start the collector agent.
+## Get Started
 
-Should we use otel-colletor build tool to build contrib with minimal modules?
+Follow these steps to run the agent:
+
+1. SSH into your VM
+2. Download the install script `curl -o https://github/team-hypha/hypha-agent/install.sh`.
+3. Run `bash install.sh <service_name> <gateway_collector> <log_file_path>`. The script takes three arguments:
+
+- `<service_name>` defines the service name tag used to identify logs and traces. Example: `service1`.
+- `<gateway_collector>` is the host address of the OTel gateway collector. It's an IP address and port combination. Example: `192.167.1.1:3478`. This is the address where the gateway collector of the Hypha backend receives logs and traces.
+- `<log_file_path>` defines the path to the file(s) containing logs output by the service. Use an absolute file path. Optionally can use _. Example: `/home/ec2-user/lab-demo/logs/_.json`
+
+## Install Script Explanation
+
+The `install.sh` script creates a `hypha-agent/` folder and downloads:
+- `download_collector_agent.sh`
+  - Downloads the OTel collector contrib v0.47.0 binary appropriate for the processor architecture (x86 or ARM).
+- `start_collector_agent.sh`
+  - Uses the arguments passed to `install.sh` to configure the agent collector for the service; starts the agent collector.
+- `otel-config.yaml`
