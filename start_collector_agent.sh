@@ -3,4 +3,4 @@ if [[ $# != '3' ]]; then
     exit
 fi
 
-OTEL_SERVICE_NAME=$1 OTEL_GATEWAY_ENDPOINT=$2 LOG_FILE_PATH=$3 ./otelcol-contrib/otelcol-contrib --config ../otel-config.yaml &
+OTEL_SERVICE_NAME=$1 OTEL_GATEWAY_ENDPOINT=$2 LOG_FILE_PATH=$3 ./otelcol-contrib/otelcol-contrib --config ./otel-config.yaml &
