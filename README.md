@@ -7,7 +7,7 @@ The Hypha agent is an OTel collector deployed as an agent & configured to read l
 Follow these steps to run the agent:
 
 1. SSH into your VM
-2. Download the install script `curl -o https://github/team-hypha/hypha-agent/install.sh`.
+2. Download the install script `curl -O https://raw.githubusercontent.com/Team-Hypha/hypha-agent/main/install.sh`.
 3. Run `bash install.sh <service_name> <gateway_collector> <log_file_path>`. The script takes three arguments:
 
 - `<service_name>` defines the service name tag used to identify logs and traces. Example: `service1`.
@@ -17,6 +17,7 @@ Follow these steps to run the agent:
 ## Install Script Explanation
 
 The `install.sh` script creates a `hypha-agent/` folder and downloads:
+
 - `download_collector_agent.sh`
   - Downloads the OTel collector contrib v0.47.0 binary appropriate for the processor architecture (x86 or ARM).
 - `start_collector_agent.sh`
