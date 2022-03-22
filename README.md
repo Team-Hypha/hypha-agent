@@ -10,9 +10,10 @@ Follow these steps to run the agent:
 2. Download the install script `curl -O https://raw.githubusercontent.com/Team-Hypha/hypha-agent/main/install.sh`.
 3. Run `bash install.sh <service_name> <gateway_collector> <log_file_path>`. The script takes three arguments:
 
-- `<service_name>` defines the service name tag used to identify logs and traces. Example: `service1`.
-- `<gateway_collector>` is the host address of the OTel gateway collector. It's an IP address and port combination. Example: `192.167.1.1:3478`. This is the address where the gateway collector of the Hypha backend receives logs and traces.
-- `<log_file_path>` defines the path to the file(s) containing logs output by the service. Use an absolute file path. Optionally can use _. Example: `/home/ec2-user/lab-demo/logs/_.json`
+- Be sure to wrap the arguments in quotes.
+- `<service_name>` defines the service name tag used to identify logs and traces. Example: `"service1"`.
+- `<gateway_collector>` is the host address of the OTel gateway collector. It's an IP address and port combination. Example: `"192.167.1.1:3478"`. This is the address where the gateway collector of the Hypha backend receives logs and traces.
+- `<log_file_path>` defines the path to the file(s) containing logs output by the service. Use an absolute file path. Optionally can use \_. Example: `"/home/ec2-user/lab-demo/services/*/logs/*.json"`
 
 ## Install Script Explanation
 
