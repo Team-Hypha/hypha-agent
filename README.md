@@ -1,8 +1,8 @@
 # Hypha Agent
 
-The Hypha agent is an OTel collector deployed as an agent & configured to read log files and receive traces. To use the agent, you will need to run our install script and require our tracing file when running your Node application. Repeat this process for each service in your system.
+The Hypha agent is an OTel collector deployed as an agent & configured to read log files and receive traces. To use the agent, you will need to SSH into the service's VM, run our install script, and require our tracing file when running your Node application. Repeat this process for each service in your system.
 
-*IMPORTANT*: You will need to deploy the hypha-backend first to get your gateway collector endpoint. This is the IP:port where the hypha-agent will send telemetry data.
+*IMPORTANT*: You will need to deploy the [hypha-backend](https://github.com/Team-Hypha/hypha-backend) first to get your gateway collector endpoint. This is the IP:port where the hypha-agent will send telemetry data.
 
 ## Agent Setup
 
