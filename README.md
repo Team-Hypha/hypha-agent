@@ -4,6 +4,10 @@ The Hypha agent is an OTel collector deployed as an agent & configured to read l
 
 ## Get Started
 
+### Instrument your application
+1. cd into your application directory and download the OTel Node instrumentation file
+2. To run your application, use `node -r tracing.js <applicationfile>.js`
+
 Follow these steps to run the agent:
 
 1. SSH into your VM
