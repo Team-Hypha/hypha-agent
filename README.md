@@ -4,6 +4,10 @@ The Hypha agent is an OTel collector deployed as an agent & configured to read l
 
 *IMPORTANT*: You will need to deploy the [hypha-backend](https://github.com/Team-Hypha/hypha-backend) first to get your gateway collector endpoint. This is the IP:port where the hypha-agent will send telemetry data.
 
+## Instrument your application
+1. cd into your application directory and download the Hypha instrumentation file `curl -O https://raw.githubusercontent.com/Team-Hypha/hypha-agent/main/tracing.js`
+2. To run your Node application, use `node -r tracing.js <applicationfile>.js`
+
 ## Agent Setup
 
 Follow these steps to run the agent:
@@ -17,10 +21,6 @@ Follow these steps to run the agent:
 - `<service_name>` defines the service name tag used to identify logs and traces. Example: `"service1"`.
 - `<gateway_collector>` is the host address of the OTel gateway collector. It's an IP address and port combination. Example: `"192.167.1.1:3478"`. This is the address where the gateway collector of the Hypha backend receives logs and traces.
 - `<log_file_path>` defines the path to the file(s) containing logs output by the service. *Use an absolute file path*. Optionally can use \_. Example: `"/home/ec2-user/lab-demo/services/*/logs/*.json"`
-
-## Instrument your application
-1. cd into your application directory and download the Hypha instrumentation file `curl -O https://raw.githubusercontent.com/Team-Hypha/hypha-agent/main/tracing.js`
-2. To run your Node application, use `node -r tracing.js <applicationfile>.js`
 
 
 #### Install Script Explanation
