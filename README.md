@@ -12,7 +12,7 @@ Follow these steps to run the agent:
 3. Run `bash install.sh <service_name> <gateway_collector> <log_file_path>`. The script takes three arguments; make sure you have the correct order.
 
 
-### Guidance on the 3 arguments for `install.sh`
+#### Guidance on the 3 arguments for `install.sh`
 - Be sure to wrap each argument in quotes.
 - `<service_name>` defines the service name tag used to identify logs and traces. Example: `"service1"`.
 - `<gateway_collector>` is the host address of the OTel gateway collector. It's an IP address and port combination. Example: `"192.167.1.1:3478"`. This is the address where the gateway collector of the Hypha backend receives logs and traces.
