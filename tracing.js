@@ -7,12 +7,6 @@ const {
   OTLPTraceExporter,
 } = require("@opentelemetry/exporter-trace-otlp-grpc");
 
-const { Resource } = require("@opentelemetry/resources");
-
-const {
-  SemanticResourceAttributes,
-} = require("@opentelemetry/semantic-conventions");
-
 const exporter = new OTLPTraceExporter({
   // optional - url default value is http://localhost:55681/v1/traces
   url: "http://localhost:4317/v1/traces",
